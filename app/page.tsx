@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Iframe from 'react-iframe';
 
 const HTMLContentTypes = ['html', 'htm']; // Sample array of HTML content types
 const IMGContentTypes = ['image/jpeg', 'image/png']; // Sample array of image content types
@@ -13,17 +14,18 @@ export default function Home() {
 
   return (
       <div className={itemClasses} key={_index}>
-          {HTMLContentTypes.includes(item.contentType) && (
-              <>
-                  <iframe
-                      sandbox="allow-scripts"
-                      src={item.url}
-                    //   style={{
-                    //       pointerEvents: "none",
-                    //   }}
-                  />
-              </>
-          )}
+             {HTMLContentTypes.includes(item.contentType) && (
+         <Iframe
+           url={item.url}
+           width="100%" // Adjust dimensions as needed
+           height="400px" // Adjust dimensions as needed
+           display="initial" // Allows user interaction
+           position="relative" // Enables proper positioning
+           allowFullScreen // Enables fullscreen mode (optional)
+         >
+           <p>Your browser does not support iframes.</p>
+         </Iframe>
+      )}
           {IMGContentTypes.includes(item.contentType) && (
               <img
                   src={item.url}
