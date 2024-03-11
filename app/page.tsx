@@ -22,6 +22,9 @@ export default function Home() {
          display="initial"
          position="relative"
          allowFullScreen
+         styles={{
+            pointerEvents: "none",
+        }}
        />
       )}
           {IMGContentTypes.includes(item.contentType) && (
