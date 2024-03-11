@@ -16,15 +16,13 @@ export default function Home() {
       <div className={itemClasses} key={_index}>
              {HTMLContentTypes.includes(item.contentType) && (
          <Iframe
-           url={item.url}
-           width="100%" // Adjust dimensions as needed
-           height="400px" // Adjust dimensions as needed
-           display="initial" // Allows user interaction
-           position="relative" // Enables proper positioning
-           allowFullScreen // Enables fullscreen mode (optional)
-         >
-           <p>Your browser does not support iframes.</p>
-         </Iframe>
+         url={item.url}
+         width="100%"
+         height="400px"
+         display="initial"
+         position="relative"
+         allowFullScreen
+       />
       )}
           {IMGContentTypes.includes(item.contentType) && (
               <img
