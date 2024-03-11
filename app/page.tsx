@@ -18,9 +18,9 @@ export default function Home() {
                   <iframe
                       sandbox="allow-scripts"
                       src={item.url}
-                      style={{
-                          pointerEvents: "none",
-                      }}
+                    //   style={{
+                    //       pointerEvents: "none",
+                    //   }}
                   />
               </>
           )}
